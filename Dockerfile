@@ -3,7 +3,7 @@ FROM node:12
 WORKDIR /app
 
 COPY package*.json ./
-ADD .env
+
 RUN npm install
 
 COPY . .
