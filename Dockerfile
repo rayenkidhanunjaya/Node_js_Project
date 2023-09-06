@@ -1,7 +1,13 @@
-FROM node:10.16.0-alpine
+FROM node:12
+
 WORKDIR /app
-RUN apt-get update && apt-get install git -y
-RUN git clone https://github.com/Vlaxmi0312/Node_js_Project.git
+
+COPY package*.json ./
+
 RUN npm install
+
+COPY . .
+
 EXPOSE 3000
-CMD [ "node", "app.js" ]
+
+CMD [ "node", "server.js" ]
